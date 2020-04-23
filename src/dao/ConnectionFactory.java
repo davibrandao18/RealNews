@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 public class ConnectionFactory {
 	
 	
@@ -26,11 +28,12 @@ public class ConnectionFactory {
 		// Obtem conexao com o banco de dados
 		public static Connection obtemConexao() throws SQLException {
 			try {
-			return DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/horadoevento?useTimezone=true&serverTimezone=America/Sao_Paulo"
-							+ "&user=root&password=");
-			} catch (SQLException e) {
-				System.out.println("NAO foi estabelecida conexão !");
-				throw new RuntimeException(e);		}
+				return DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/portal_realnews?useTimezone=true&serverTimezone=America/Sao_Paulo"
+							+ "&user=master&password=*Quiki18@");
+				} catch (SQLException e) {
+					JOptionPane.showMessageDialog(null, "NAO foi estabelecida conexao !");
+					throw new RuntimeException(e);
+				}
 		}
 }
