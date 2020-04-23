@@ -17,7 +17,7 @@ import service.NoticiaService;
  * @author Maicon Souza
  * @since
  */
-@WebServlet("/noticias.do")
+@WebServlet("/Noticias.do")
 public class Noticias extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -49,7 +49,7 @@ public class Noticias extends HttpServlet {
 		for (Noticia noticia : ns.listar()) {
 			out.print(
 					"<button class='btn-noticia'>"
-						+ "<a href='./noticias.do?id=" +noticia.getId() +"'>" + noticia.getTitulo() +"</a>"
+						+ "<a href='./Noticias.do?id=" +noticia.getId() +"'>" + noticia.getTitulo() +"</a>"
 						+ "<p>" +noticia.getDescricao() +"</p>"
 					+ "</button>"
 					
@@ -61,5 +61,18 @@ public class Noticias extends HttpServlet {
 		out.println("</body>"
 				+ "</html>");
 	}
-	 
+
+	
+	
+	
+	// /!\ socorro
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("id");
+		
+		NoticiaService ns = new NoticiaService();
+		
+		ns.carregar(Integer.parseInt(id));
+		System.out.println(id);
+		
+	}
 }
