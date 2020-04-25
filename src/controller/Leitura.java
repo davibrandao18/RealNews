@@ -13,11 +13,10 @@ import service.NoticiaService;
 /**
  * Servlet implementation class NoticiaFull
  */
-@WebServlet("/Noticias.do?id=*")
-public class NoticiaFull extends HttpServlet {
+@WebServlet("/Leitura.do")
+public class Leitura extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    // /!\ socorro
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String id = request.getParameter("id");
 		
@@ -27,7 +26,4 @@ public class NoticiaFull extends HttpServlet {
 		
 		System.out.println(id);
 	}
-	
-
-
 }

@@ -49,30 +49,15 @@ public class Noticias extends HttpServlet {
 		for (Noticia noticia : ns.listar()) {
 			out.print(
 					"<button class='btn-noticia'>"
-						+ "<a href='./Noticias.do?id=" +noticia.getId() +"'>" + noticia.getTitulo() +"</a>"
+						+ "<a href='./Leitura.do?id=" +noticia.getId() +"'>" + noticia.getTitulo() +"</a>"
 						+ "<p>" +noticia.getDescricao() +"</p>"
 					+ "</button>"
-					
-					);
+			);
 		}
 		
 		
 		// fechamento de tags restantes
 		out.println("</body>"
 				+ "</html>");
-	}
-
-	
-	
-	
-	// /!\ socorro
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
-		
-		NoticiaService ns = new NoticiaService();
-		
-		ns.carregar(Integer.parseInt(id));
-		System.out.println(id);
-		
 	}
 }
