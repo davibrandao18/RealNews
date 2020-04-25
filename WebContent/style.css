@@ -7,7 +7,7 @@ body {
 	background-color: #161819;
 }
 
-h1 {
+h1, h2, h3, h4 {
 	padding: 10px;
 	margin: auto 0;
 	color: #fff;
@@ -50,6 +50,35 @@ a:visited {
 }
 
 .btn-noticia p {
+	font-size: 13px;
+	color: #737377;
+	word-wrap: break-word; 
+}
+
+.cl-comentrio {
+	width: 500px;
+	max-width: 100vw;
+	height: auto;
+	background-color: #303030;
+	padding: 20px;
+	border-radius: 15px;
+	display: flex;
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+	display: block;
+	text-align: left;
+	margin: 20px 0;
+	border: none;
+	transition: all .3s;
+}
+
+.cl-comentrio:hover {
+	background-color: #000; 
+	transition: all .3s;
+}
+
+.cl-comentrio p {
 	font-size: 13px;
 	color: #737377;
 	word-wrap: break-word; 

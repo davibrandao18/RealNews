@@ -93,7 +93,7 @@ public class ComentarioDao {
 				comentario.setId(id);
 				comentario.setNome(resultado.getString("nome"));
 				comentario.setTexto(resultado.getString("texto"));
-				comentario.setNoticia(noticia.carregar(resultado.getInt("noticia")));
+				comentario.setNoticia(noticia.carregar(resultado.getInt("fk_noticia_id")));
 				
 				return comentario;
 			}
@@ -112,7 +112,7 @@ public class ComentarioDao {
 	 */
 	public ArrayList<Comentario> listarComentarios() throws Exception {
 		ArrayList<Comentario> colecaoComentarios = new ArrayList<>();
-		String select = "SELECT * FROM comentario";
+		String select = "SELECT * FROM comentario order by id desc";
 		
 		Connection conectar = ConnectionFactory.obtemConexao();
 		PreparedStatement pst = conectar.prepareStatement(select);
@@ -124,11 +124,10 @@ public class ComentarioDao {
 			comentario.setId(resultado.getInt("id"));
 			comentario.setNome(resultado.getString("nome"));
 			comentario.setTexto(resultado.getString("texto"));
-			comentario.setNoticia(noticia.carregar(resultado.getInt("noticia")));
+			comentario.setNoticia(noticia.carregar(resultado.getInt("fk_noticia_id")));
 			
 			colecaoComentarios.add(comentario);
 		}
-			
 			return colecaoComentarios;
 		}
 }

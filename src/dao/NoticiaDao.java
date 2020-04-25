@@ -81,18 +81,15 @@ public class NoticiaDao {
 	 * @throws Exception
 	 */
 	public Noticia carregarNoticia(int id) throws Exception{
-		String sqlConsulta = "SELECT *"
-				+"FROM noticia"
-				+"WHERE id ='"+id+"'";
+		String sqlConsulta = "SELECT * FROM noticia WHERE id ="+id;
 		
 		try (Connection conectar = ConnectionFactory.obtemConexao();
 				PreparedStatement pst = conectar.prepareStatement(sqlConsulta);){
 			
 			ResultSet resultado = pst.executeQuery();
-			
-			Noticia noticia = null;
+
 			if (resultado.next()) {
-				noticia = new Noticia();
+				Noticia noticia = new Noticia();
 				String descricao = resultado.getString("descricao");
 				String titulo = resultado.getString("titulo");
 				String texto = resultado.getString("texto");
@@ -101,7 +98,6 @@ public class NoticiaDao {
 				noticia.setDescricao(descricao);
 				noticia.setTitulo(titulo);
 				noticia.setTexto(texto);
-				
 				return noticia;
 			}
 			
