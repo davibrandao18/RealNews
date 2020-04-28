@@ -72,6 +72,23 @@ public class ComentarioDao {
 	}
 	
 	/**
+	 * Metodo para deletar todos os Comentario do Banco de dados
+	 * @param int id
+	 * @throws Exception
+	 */
+	public void deletarComentarios(int fkid) {
+		String deletar = "DELETE FROM comentario WHERE fk_noticia_id = ?";
+			
+		try (Connection conectar = ConnectionFactory.obtemConexao();
+				PreparedStatement pst = conectar.prepareStatement(deletar)) {
+			pst.setInt(1, fkid);
+			pst.execute();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
 	 * Metodo de carregar um comentario.
 	 * @param int id
 	 * @return Comentario comentario
