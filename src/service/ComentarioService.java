@@ -51,7 +51,17 @@ public class ComentarioService {
 		dao.deletarComentario(id);
 		System.out.println("Deu certo a exclusao");
 	}
-
+	
+	/**
+	 * Metodo responsavel por chamar o excluir DAO
+	 * @since
+	 * @param int id
+	 */
+	public void excluirComentarios(int fkid){
+		dao.deletarComentarios(fkid);
+		System.out.println("Deu certo as exclusoes");
+	}
+	
 	/**
 	 * Metodo responsavel por chamar a consulta no DAO
 	 * @since
