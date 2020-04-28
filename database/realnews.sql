@@ -14,8 +14,7 @@ CREATE TABLE comentario (
 	nome VARCHAR(126),
 	texto VARCHAR(512),
 	fk_noticia_id INT NOT NULL,
-	FOREIGN KEY (fk_noticia_id)
-	REFERENCES noticia(id)
+	FOREIGN KEY (fk_noticia_id) REFERENCES noticia(id)
 );
 
 
@@ -74,6 +73,10 @@ INSERT INTO comentario (nome, texto, fk_noticia_id) VALUES
 ("Charles","Utilizo Ubuntu, essa atualização ficou realmente maravilhosa!",3),
 ("Douglas","Adorei o novo modo dark",3);
 
+
+DELETE FROM comentario WHERE fk_noticia_id=1;
+DELETE FROM noticia WHERE id = 1;
+select * from noticia;
 
 ## ÁREA DE TESTES
 -- SELECT *FROM noticia WHERE id =1;
