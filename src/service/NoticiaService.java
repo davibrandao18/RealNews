@@ -42,10 +42,15 @@ public class NoticiaService {
 	 * Metodo responsavel por chamar o excluir DAO
 	 * @since
 	 * @param int id
+	 * @return 
 	 */
 	public void excluir(int id){
-		dao.deletarNoticia(id);
-		System.out.println("Deu certo a exclusao");
+		try {
+			dao.deletarNoticia(id);
+			System.out.println("Deu certo a exclusao");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
