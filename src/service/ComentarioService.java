@@ -84,9 +84,9 @@ public class ComentarioService {
 	 * @param 
 	 * @return ArrayList<Comentario>
 	 */
-	public ArrayList<Comentario> listar() {
+	public ArrayList<Comentario> listar(int id) {
 		try {
-			return dao.listarComentarios();
+			return dao.listarComentarios(id);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -115,7 +115,7 @@ public class NoticiaDao {
 	 */
 	public ArrayList<Noticia> listarNoticias() throws Exception {
 		ArrayList<Noticia> colecaoNoticias = new ArrayList<>();
-		String select = "SELECT * FROM noticia";
+		String select = "SELECT * FROM noticia order by id desc";
 		
 		Connection conectar = ConnectionFactory.obtemConexao();
 		PreparedStatement pst = conectar.prepareStatement(select);

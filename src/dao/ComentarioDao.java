@@ -127,9 +127,9 @@ public class ComentarioDao {
 	 * @return ArrayList<Comentario> colecaoComentarios
 	 * @throws Exception
 	 */
-	public ArrayList<Comentario> listarComentarios() throws Exception {
+	public ArrayList<Comentario> listarComentarios(int id) throws Exception {
 		ArrayList<Comentario> colecaoComentarios = new ArrayList<>();
-		String select = "SELECT * FROM comentario order by id desc";
+		String select = "SELECT * FROM comentario WHERE fk_noticia_id ="+id+" order by id desc";
 		
 		Connection conectar = ConnectionFactory.obtemConexao();
 		PreparedStatement pst = conectar.prepareStatement(select);
