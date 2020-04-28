@@ -22,11 +22,11 @@ public class Leitura extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("id");
+		int id = Integer.parseInt(request.getParameter("id"));
 		
 		PrintWriter out = response.getWriter();
 		NoticiaService ns = new NoticiaService();
-		Noticia noticia = ns.carregar(Integer.parseInt(id));
+		Noticia noticia = ns.carregar(id);
 		
 		
 		ComentarioService cs = new ComentarioService();
@@ -54,10 +54,10 @@ public class Leitura extends HttpServlet {
 							+ "<p>"+noticia.getTexto()+"</p>"
 						+ "</div>"
 						+ "<hr>"
-						+ "<h3 class='commentHeader'>Comentários</h3>"
+						+ "<h3 class='commentHeader'>Comentarios</h3>"
 				);
 						// cada noticia recebe propriedades como botao, link e descricao
-						for (Comentario comentario : cs.listar()) {
+						for (Comentario comentario : cs.listar(id)) {
 							out.print(
 									"<div class='comment'>"
 										+ "<h4>" +comentario.getNome() + "</h4>"
@@ -67,13 +67,13 @@ public class Leitura extends HttpServlet {
 						}
 		out.println(
 				"<hr>"
-						+ "<h3 class='commentHeader'>Deixe um comentário você também :)</h3>"
+						+ "<h3 class='commentHeader'>Deixe um comentario voce tambem :)</h3>"
 						+ "<form class='formNewComment' action='./Comentario.do' method='post'>"
 							+ "<input type='hidden' value='"+id+"' name='idNoticia'>"
 							+ "<label>Nome: </label>"
 							+ "<input name='nome' type='text' placeholder='Seu nome'><br>"
-							+ "<label>Comentário: </label>"
-							+ "<textarea name='coment' rows='5' placeholder='Escreva um comentário...'></textarea>"
+							+ "<label>Comentario: </label>"
+							+ "<textarea name='coment' rows='5' placeholder='Escreva um comentario...'></textarea>"
 							+ "<input class='formBtnSubmit' type=submit >"
 						+ "</form>"
 						

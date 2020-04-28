@@ -42,6 +42,12 @@ public class Noticias extends HttpServlet {
 						+ "<body>"
 							+ "<h1>RealNews</h1>"
 							+ "<hr>"
+							+ "<form class='formDelete' action='./Criar.do' method='post'>"
+							+ "<input type='hidden' value='0' name='idNoticia'>"
+								+ "<button type=submit>"
+									+ "<img width='30px' height='30px' src='https://www.iconsdb.com/icons/preview/white/trash-6-xxl.png'>"
+								+ "</button>"
+							+ "</form>"
 					);
 		
 		
