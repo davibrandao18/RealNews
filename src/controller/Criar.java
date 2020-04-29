@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Noticia;
-import service.NoticiaService;
 
 /**
  * Servlet implementation class Criar
@@ -22,8 +20,6 @@ public class Criar extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		PrintWriter out = response.getWriter();
-		NoticiaService ns = new NoticiaService();
-		Noticia noticia = new Noticia();
 		
 	 
 		// Set response content type
@@ -37,18 +33,20 @@ public class Criar extends HttpServlet {
 						+ "<meta name='theme-color' content='#161819'>"
 						+ "<meta name='apple-mobile-web-app-status-bar-style' content='#161819'>"
 						+ "<link rel='stylesheet' href='./style.css'>"
+						+ "<link rel='shortcut icon' href='/JornalRealNews/img/realnews.png'"
 					+ "</head>"
 					+ "<body>"
-						+ "<h1><a href='./Noticias.do'>RealNews</a></h1>"
+						+ "<h1><img src='/JornalRealNews/img/realnews.png'  width='30px' height='30px'>"
+						+ "<a href='./Noticias.do'>RealNews</a></h1>"
 						+ "<hr>"
-						+ "<h3 class='EditHeader'>Editar noticia</h3>"
+						+ "<h3 class='EditHeader'>Criar noticia</h3>"
 						+ "<form class='formEdit' action='./ProcessaCriacao.do' method='post'>"
 							+ "<input type='hidden' value='0' name='idNoticia'>"
 							+ "<input type='text' name='title' placeholder='Adicione um titulo'>"
 							+ "<textarea name='description' rows='5' placeholder='Escreva uma descricao...'></textarea>"
 							+ "<textarea name='text' rows='5' placeholder='Escreva o texto...'></textarea>"
 							+ "<button type=submit>"
-								+ "<img width='30px' height='30px' src='https://www.iconsdb.com/icons/preview/white/check-mark-12-xxl.png'>"
+								+ "<img width='30px' height='30px' src='/JornalRealNews/img/right.png'>"
 							+ "</button>"
 						+ "</form>"
 					+"</body>"

@@ -13,6 +13,10 @@ h1, h2, h3, h4 {
 	color: #fff;
 }
 
+h1{
+	align-items: center;
+}
+
 hr {
 	margin: 0 0 25px 0;
 }
@@ -145,14 +149,35 @@ a:visited {
 
 
 .formEdit {
-	position: fixed;
-	right: 20px;
-	bottom: 90px;
 	background-color: transparent;
+	width:80%;
+}
+
+.formEdit input, .formEdit textarea {
+	width:80%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border-radius: 5px 5px;
+	border: none;
+	background-color: #303030;
+	height: auto;
+}
+
+.formEdit input:focus, .formEdit textarea:focus{
+	color: #FFFF;
+}
+
+.formEdit textarea {
+	resize: vertical;
+	min-height: 100px;
+	line-height: 20px;
 }
 
 .formEdit button {
 	background-color: #bf906e;
+	position: fixed;
+	right: 20px;
+	bottom: 90px;
 	padding: 10px;
 	border-radius: 50%;
 	border: none;
