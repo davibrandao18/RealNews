@@ -1,4 +1,4 @@
-<img width="100px" height="100px" src="./WebContent/realnews.png">
+<img width="100px" height="100px" src="./WebContent/img/realnews.png">
 
 
 <h3>Trabalho avaliativo D1 de Desenvolvimento Web</h3>
