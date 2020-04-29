@@ -1,3 +1,6 @@
+<img width="100px" height="100px" src="./WebContent/realnews.png">
+
+
 <h3>Trabalho avaliativo D1 de Desenvolvimento Web</h3>
 <p>O trabalho deverá ser implementado utilizando todos os padrões de projeto apresentados:<br>
 <strong>Factory (ConnectionFactory), Data Access Object (DAO), Service e JavaBeans.</strong></p>
