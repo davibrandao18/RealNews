@@ -1,5 +1,12 @@
-<img width="100px" height="100px" src="./WebContent/img/realnews.png">
+<h1 align="center">RealNews</h1>
 
+<p align="center">
+  <img src="https://img.shields.io/github/stars/davibrandao18/RealNews?color=9cf">
+  <img alt="Last commit on GitHub" src="https://img.shields.io/github/last-commit/davibrandao18/RealNews?color=9cd">
+  <img alt="Project programing languages count" src="https://img.shields.io/github/languages/count/davibrandao18/RealNews?color=9cb">
+</p>
+
+<img width="100px" height="100px" src="./WebContent/img/realnews.png">
 
 <h3>Trabalho avaliativo D1 de Desenvolvimento Web</h3>
 <p>O trabalho deverá ser implementado utilizando todos os padrões de projeto apresentados:<br>
